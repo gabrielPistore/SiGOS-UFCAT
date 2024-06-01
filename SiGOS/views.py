@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def new_work_order(request):
+    return render(request, "SiGOS/pages/new-work-order.html")
