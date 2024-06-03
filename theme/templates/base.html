@@ -1,16 +1,18 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>
-            {% block title %}{% endblock title %} | SiGOS-UFCAT
-        </title>
-        {% tailwind_css %}
-    </head>
-    <body>
-        {% block body %}{% endblock body %}
-    </body>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>
+          {% block title %}{% endblock title %} | SiGOS-UFCAT
+      </title>
+      {% tailwind_css %}
+      {% load static %}
+      <script src="{% static 'js/htmx/htmx.min.js' %}" defer></script>
+  </head>
+  <body>
+      {% block body %}{% endblock body %}
+  </body>
 </html>
