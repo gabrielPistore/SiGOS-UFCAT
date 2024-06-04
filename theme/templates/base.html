@@ -15,7 +15,12 @@
   </head>
   <body class="font-rawline">
     {% include "core/partials/navbar.html" %}
-    {% block body %}
-    {% endblock %}
+    <main class="px-16 py-8">
+      <h1 class="text-4xl font-extralight">
+        {% block header %}{% endblock header %}
+      </h1>
+      {% block content %}
+      {% endblock %}
+    </main>
   </body>
 </html>
