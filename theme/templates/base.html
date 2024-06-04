@@ -1,3 +1,4 @@
+{% load static %}
 {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -7,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{% block title %}{% endblock %} | SiGOS-UFCAT</title>
     {% tailwind_css %} 
-    {% load static %}
     <script src="{% static 'js/htmx/htmx.min.js' %}" defer></script>
     <link href="https://fonts.cdnfonts.com/css/rawline" rel="stylesheet" />
     <link
@@ -41,5 +41,6 @@
       </div>
       {% include "core/partials/footer.html" %}
     </div>
+    <script src="{% static "js/dropdownMenu.js" %}"></script>
   </body>
 </html>

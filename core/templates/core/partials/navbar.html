@@ -1,4 +1,4 @@
-<nav class="flex justify-between px-20 py-2 shadow-lg">
+<nav class="flex justify-between px-20 py-1 shadow-lg">
   {% load static %}
   <a href="{% url "core:home" %}">
     <img src="{% static 'Logo.svg' %}" alt="UFCat Logo" />
@@ -31,8 +31,6 @@
       </li>
     </ul>
     <div class="h-4 border-l-2 border-solid"></div>
-    <button class="text-lg">
-      <i class="fa-solid fa-user"></i>
-    </button>
+    {% include "core/partials/navbar-dropdown-menu.html" %}
   </div>
 </nav>
