@@ -14,13 +14,20 @@
     <link href="https://fonts.cdnfonts.com/css/rawline" rel="stylesheet" />
   </head>
   <body class="font-rawline">
-    {% include "core/partials/navbar.html" %}
-    <main class="px-16 py-8">
-      <h1 class="text-4xl font-extralight">
-        {% block header %}{% endblock header %}
-      </h1>
-      {% block content %}
-      {% endblock %}
-    </main>
+    <div class="relative min-h-screen">
+      <div>
+        {% include "core/partials/navbar.html" %}
+        <div class="px-16 py-8">
+          <h1 class="text-4xl font-extralight">
+            {% block header %}{% endblock header %}
+          </h1>
+          <main>
+            {% block content %}
+            {% endblock %}
+          </main>
+        </div>
+      </div>
+      {% include "core/partials/footer.html" %}
+    </div>
   </body>
 </html>
