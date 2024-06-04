@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-%thg2w@)it05m&bz@ld8vvi31_vc)%!q6)br0tg97&2d4=_p+^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list = []
 
 # Application definition
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django_browser_reload",
     "tailwind",
     "django_htmx",
+    "fontawesomefree",
     "theme",
     "core",
 ]
