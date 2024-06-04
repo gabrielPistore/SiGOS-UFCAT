@@ -42,7 +42,15 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                "primary": "#297A7D",
+                "secondary": "#F67600"
+            },
+            fontFamily: {
+                rawline: ["Rawline", "sans-serif"],
+            },
+        },
     },
     plugins: [
         /**

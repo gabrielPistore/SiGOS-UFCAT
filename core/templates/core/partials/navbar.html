@@ -1,0 +1,30 @@
+<nav class="flex justify-between px-20 py-2 shadow-lg">
+  {% load static %}
+  <img src="{% static 'Logo.svg' %}" alt="UFCat Logo" />
+  <ul class="flex items-center gap-4 text-xs font-medium text-primary">
+    <li>
+      <a 
+        href="{% url 'core:home' %}"
+        class="{% if request.path == "/" %}text-secondary{% endif %}"
+      >Home</a>
+    </li>
+    <li>
+      <a
+        href="{% url 'core:order_management' %}"
+        class="{% if request.path == "/order-management/" %}text-secondary{% endif %}"
+      >Gerenciar OS</a>
+    </li>
+    <li>
+      <a
+        href="{% url 'core:form' %}"
+        class="{% if request.path == "/form/" %}text-secondary{% endif %}"
+      >Cadastrar OS</a>
+    </li>
+    <li>
+      <a
+        href="{% url 'core:history' %}"
+        class="{% if request.path == "/history/" %}text-secondary{% endif %}"
+      >Histórico</a>
+    </li>
+  </ul>
+</nav>
