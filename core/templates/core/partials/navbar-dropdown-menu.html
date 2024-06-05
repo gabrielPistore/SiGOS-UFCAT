@@ -1,23 +1,17 @@
-<div 
-  x-data="{ open: false }"
-  class="relative inline-block"
->
-  <button
-    @click="open = !open"
-    class="text-lg"
-  >
+<div x-data="{ open: false }" class="relative inline-block">
+  <button @click="open = !open" class="text-lg">
     <i class="fa-solid fa-user"></i>
   </button>
   <menu
     x-show="open"
     @click.outside="open = false"
-    class="absolute z-10 p-4 text-base bg-white border shadow-lg roundend-md translate-y-1/4 -translate-x-3/4 min-w-fit"
+    class="absolute z-10 p-6 text-base -translate-x-40 translate-y-2 bg-white border rounded-lg shadow-lg"
   >
-    <li class="flex items-baseline gap-2 mb-2">
+    <li class="flex items-baseline gap-3 mb-2">
       <i class="fa-solid fa-gear"></i>
       <a href="">Configurações</a>
     </li>
-    <li class="flex items-baseline gap-2">
+    <li class="flex items-baseline gap-3">
       <i class="fa-solid fa-sign-out"></i>
       <a href="">Sair</a>
     </li>
