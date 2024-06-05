@@ -1,10 +1,17 @@
-<div class="relative inline-block dropdown">
-  <button class="text-lg dropdown-button" onClick="openDropdownMenu()">
+<div 
+  x-data="{ open: false }"
+  class="relative inline-block"
+>
+  <button
+    @click="open = !open"
+    class="text-lg"
+  >
     <i class="fa-solid fa-user"></i>
   </button>
   <menu
-    id="dropdown-menu"
-    class="absolute z-10 hidden p-4 text-base bg-white border shadow-lg roundend-md translate-y-1/4 -translate-x-3/4 min-w-fit dropdown-content"
+    x-show="open"
+    @click.outside="open = false"
+    class="absolute z-10 p-4 text-base bg-white border shadow-lg roundend-md translate-y-1/4 -translate-x-3/4 min-w-fit"
   >
     <li class="flex items-baseline gap-2 mb-2">
       <i class="fa-solid fa-gear"></i>
