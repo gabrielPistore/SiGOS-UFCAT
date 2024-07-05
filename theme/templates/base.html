@@ -1,44 +1,20 @@
 {% load static %}
-{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{% block title %}{% endblock %} | SiGOS-UFCAT</title>
-    {% tailwind_css %}
-    <script src="{% static 'js/htmx.min.js' %}" defer></script>
-    <link href="https://fonts.cdnfonts.com/css/rawline" rel="stylesheet" />
-    <link
-      href="{% static 'fontawesomefree/css/fontawesome.css' %}"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="{% static 'fontawesomefree/css/brands.css' %}"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="{% static 'fontawesomefree/css/solid.css' %}"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-  </head>
+  {% include "partials/head.html" %}
   <body class="font-rawline">
     <div class="relative min-h-screen">
       <div>
         {% include "core/partials/navbar.html" %}
         <div class="px-16 py-8">
           <h1 class="text-4xl font-extralight">
-            {% block header %}{% endblock header %}
+            {% block header %}
+            {% endblock header %}
           </h1>
-          <main>{% block content %}{% endblock %}</main>
+          <main>
+            {% block content %}
+            {% endblock content %}
+          </main>
         </div>
       </div>
       {% include "core/partials/footer.html" %}

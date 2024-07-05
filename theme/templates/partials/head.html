@@ -1,0 +1,24 @@
+{% load static tailwind_tags %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>
+    {% block title %}
+    {% endblock title %}
+  | SiGOS-UFCAT</title>
+  {% tailwind_css %}
+  <script src="{% static 'js/htmx.min.js' %}" defer></script>
+  <link href="https://fonts.cdnfonts.com/css/rawline" rel="stylesheet" />
+  <link href="{% static 'fontawesomefree/css/fontawesome.css' %}"
+        rel="stylesheet"
+        type="text/css" />
+  <link href="{% static 'fontawesomefree/css/brands.css' %}"
+        rel="stylesheet"
+        type="text/css" />
+  <link href="{% static 'fontawesomefree/css/solid.css' %}"
+        rel="stylesheet"
+        type="text/css" />
+  <script defer
+          src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
