@@ -2,11 +2,9 @@
   <button @click="open = !open" class="text-lg">
     <i class="fa-solid fa-user"></i>
   </button>
-  <menu
-    x-show="open"
-    @click.outside="open = false"
-    class="absolute z-10 p-6 text-base -translate-x-40 translate-y-2 bg-white border rounded-lg shadow-lg"
-  >
+  <menu x-show="open"
+        @click.outside="open = false"
+        class="absolute z-10 p-6 text-base -translate-x-40 translate-y-2 bg-white border rounded-lg shadow-lg">
     <li class="flex items-baseline gap-3 mb-2">
       <i class="fa-solid fa-gear"></i>
       <a href="">Configurações</a>

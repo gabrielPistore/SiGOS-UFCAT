@@ -1,7 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-  {% include "partials/head.html" %}
+  <head>
+    {% include "partials/head.html" %}
+    <title>
+      {% block title %}
+      {% endblock title %}
+      | SiGOS-UFCAT
+    </title>
+  </head>
   <body class="font-rawline">
     <div class="relative min-h-screen">
       <div>
