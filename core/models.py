@@ -28,7 +28,7 @@ class Category(models.Model):
 class WorkOrder(models.Model):
     class Meta:
         verbose_name = "Work Order"
-        verbose_name = "Work Orders"
+        verbose_name_plural = "Work Orders"
 
     # Personal data
     name = models.CharField(max_length=255)
