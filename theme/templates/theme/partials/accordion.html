@@ -1,0 +1,14 @@
+<section x-data="{selected:null}">
+    <div>
+        <div @click="selected !== 0 ? selected = 0 : selected = null"
+             class="flex items-baseline gap-4 mb-4 text-xl font-medium">
+            {% block section_title %}
+            {% endblock section_title %}
+            <i :class="selected === 0 ? 'fa-solid fa-angle-up text-primary' : 'fa-solid fa-angle-down text-primary'"></i>
+        </div>
+        <div x-show="selected == 0">
+            {% block section_content %}
+            {% endblock section_content %}
+        </div>
+    </div>
+</section>

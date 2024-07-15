@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    {% include "partials/head.html" %}
-    <title>
+    {% include "theme/partials/head.html" %}
+    <title> 
       {% block title %}
       {% endblock title %}
       | SiGOS-UFCAT
@@ -12,9 +12,9 @@
   <body class="font-rawline">
     <div class="relative min-h-screen">
       <div>
-        {% include "core/partials/navbar.html" %}
+        {% include "theme/partials/navbar.html" %}
         <div class="px-16 py-8">
-          <h1 class="text-4xl font-extralight">
+          <h1 class="mb-8 text-4xl font-extralight">
             {% block header %}
             {% endblock header %}
           </h1>
@@ -24,7 +24,7 @@
           </main>
         </div>
       </div>
-      {% include "core/partials/footer.html" %}
+      {% include "theme/partials/footer.html" %}
     </div>
   </body>
 </html>

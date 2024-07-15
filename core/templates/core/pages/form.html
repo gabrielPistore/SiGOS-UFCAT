@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "theme/base.html" %}
 {% block title %}
   Cadastrar OS
 {% endblock title %}
@@ -6,4 +6,7 @@
   Cadastro de Ordem de Serviço
 {% endblock header %}
 {% block content %}
+  <form>
+    {% include "core/partials/personal-data-section.html" %}
+  </form>
 {% endblock content %}
