@@ -3,14 +3,16 @@
 <html lang="pt-BR">
   <head>
     {% include "theme/partials/head.html" %}
-    <title> 
+    <meta name="description" content="Work Order Management System">
+    <meta name="keywords" content="work order, management">
+    <title>
       {% block title %}
       {% endblock title %}
       | SiGOS-UFCAT
     </title>
   </head>
   <body class="font-rawline">
-    <div class="relative min-h-screen">
+    <div class="flex flex-col justify-between min-h-screen">
       <div>
         {% include "theme/partials/navbar.html" %}
         <div class="px-16 py-8">

@@ -1,0 +1,16 @@
+.form-input {
+  border-color: #888888;
+  border-radius: 0.25rem;
+  padding: 8px 16px;
+}
+
+.form-input:focus {
+  border-color: #297a7d;
+  border-width: 2px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.form-input::placeholder {
+  font-weight: 400;
+}

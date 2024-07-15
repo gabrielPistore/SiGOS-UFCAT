@@ -13,10 +13,20 @@ def order_management(request):
 
 def form(request):
     form = WorkOrderForm()
+
+    # Personal data
+    personal_data = {
+        "basic_info": ["name", "department"],
+        "contact_info": ["email", "mobile_phone", "landline_phone"],
+    }
+
     return render(
         request,
         "core/pages/form.html",
-        {"form": form},
+        {
+            "form": form,
+            "personal_data": personal_data,
+        },
     )
 
 
