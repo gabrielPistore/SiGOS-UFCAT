@@ -1,13 +1,13 @@
 {% extends "core/partials/accordion.html" %}
 {% block section_title %}
-    Dados Pessoais
+    Detalhes da Solicitação
 {% endblock section_title %}
 {% block section_content %}
     <div class="mb-8 text-sm font-medium">
-        <h2 class="mb-4">Informações Básicas</h2>
+        <h2 class="mb-4">Dados de Gerenciamento</h2>
         <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
             {% for field in form %}
-                {% if field.name in personal_data.basic_info %}
+                {% if field.name in request_details.data_management %}
                     <div class="flex flex-col gap-2">
                         {{ field.label_tag }}
                         {{ field }}
@@ -20,7 +20,20 @@
         <h2 class="mb-4">Dados para Contato</h2>
         <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
             {% for field in form %}
-                {% if field.name in personal_data.contact_info %}
+                {% if field.name in request_details.classification %}
+                    <div class="flex flex-col gap-2">
+                        {{ field.label_tag }}
+                        {{ field }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="mb-8">
+        <h2 class="mb-4">Informações da Ordem de Serviço</h2>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {% for field in form %}
+                {% if field.name in request_details.work_order_info %}
                     <div class="flex flex-col gap-2">
                         {{ field.label_tag }}
                         {{ field }}

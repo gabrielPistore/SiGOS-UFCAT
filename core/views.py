@@ -13,19 +13,23 @@ def order_management(request):
 
 def form(request):
     form = WorkOrderForm()
-
-    # Personal data
     personal_data = {
         "basic_info": ["name", "department"],
         "contact_info": ["email", "mobile_phone", "landline_phone"],
     }
-
+    request_details = {
+        "data_management": ["order_type", "category", "responsible_employee"],
+        "classification": ["impact", "urgency", "priority"],
+        "work_order_info": ["opening_date", "status"],
+        "service_info": ["location", "duration"],
+    }
     return render(
         request,
         "core/pages/form.html",
         {
             "form": form,
             "personal_data": personal_data,
+            "request_details": request_details,
         },
     )
 

@@ -37,47 +37,35 @@ class WorkOrder(models.Model):
     mobile_phone = models.CharField(max_length=20)
     landline_phone = models.CharField(max_length=20, blank=True, null=True)
 
+    LEVEL = [
+        ("low", "Baixa"),
+        ("medium", "Média"),
+        ("high", "Alta"),
+    ]
     # Work Order Details
     ORDER_TYPE = [
         ("type1", "Tipo 1"),
         ("type2", "Tipo 2"),
         ("type3", "Tipo 3"),
     ]
-    IMPACT = [
-        ("low", "Baixo"),
-        ("medium", "Médio"),
-        ("high", "Alto"),
-    ]
-    URGENCY = [
-        ("low", "Baixo"),
-        ("medium", "Médio"),
-        ("high", "Alto"),
-    ]
-    PRIORITY = [
-        ("low", "Baixo"),
-        ("medium", "Médio"),
-        ("high", "Alto"),
-    ]
-    LOCATION = [
-        ("location1", "Localização 1"),
-        ("location2", "Localização 2"),
-        ("location3", "Localização 3"),
-    ]
+    IMPACT = LEVEL
+    URGENCY = LEVEL
+    PRIORITY = LEVEL
     STATUS = [
         ("open", "Aberta"),
         ("ongoing", "Em andamento"),
         ("closed", "Fechada"),
     ]
-
     order_type = models.CharField(max_length=20, choices=ORDER_TYPE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    resposible_employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    responsible_employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     impact = models.CharField(max_length=20, choices=IMPACT)
     urgency = models.CharField(max_length=20, choices=URGENCY)
     priority = models.CharField(max_length=20, choices=PRIORITY)
-    date = models.DateField()
-    location = models.CharField(max_length=20, choices=LOCATION)
+    opening_date = models.DateField()
     status = models.CharField(max_length=20, choices=STATUS)
+    # location = models.CharField(max_length=255)
+    # duration = models.CharField(max_length=255)
 
     # Report
     title = models.CharField(max_length=255)
