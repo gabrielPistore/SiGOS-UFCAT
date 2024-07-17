@@ -4,7 +4,6 @@
 {% endblock section_title %}
 {% block section_content %}
     <div class="mb-8 text-sm font-medium">
-        <h2 class="mb-4 text-base">{{ sections.detailed_report.title }}</h2>
         <div class="grid grid-cols-1 gap-4">
             {% for field in form %}
                 {% if field.name in sections.detailed_report.fields %}
