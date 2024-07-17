@@ -1,0 +1,21 @@
+{% extends "core/partials/accordion.html" %}
+{% block section_title %}
+    Dados Pessoais
+{% endblock section_title %}
+{% block section_content %}
+    {% for section in sections.personal_data.values %}
+        <div class="mb-8 text-sm font-medium">
+            <h2 class="mb-4 text-base">{{ section.title }}</h2>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+                {% for field in form %}
+                    {% if field.name in section.fields %}
+                        <div class="flex flex-col gap-2">
+                            {{ field.label_tag }}
+                            {{ field }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock section_content %}

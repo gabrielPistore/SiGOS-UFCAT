@@ -1,6 +1,6 @@
 from django import forms
 
-from utils.forms import add_placeholder, style_input_form
+from utils.forms import add_placeholder, style_input_form, update_label_suffix
 
 from .models import WorkOrder
 
@@ -34,6 +34,7 @@ class WorkOrderForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             # Apply a common style to all input fields
             style_input_form(field, "form-input")
+            update_label_suffix(field, " ")
 
             # Add placeholders to specified fields
             if field_name in placeholders:
@@ -78,3 +79,15 @@ class WorkOrderForm(forms.ModelForm):
     status = forms.ChoiceField(label="Status", choices=WorkOrder.STATUS)
 
     # Service Information
+    location = forms.CharField(label="Localização")
+    service_start_date = forms.DateField(
+        label="Início do Serviço",
+        widget=forms.DateInput(attrs={"type": "date"}),
+    )
+    service_end_date = forms.DateField(
+        label="Fim do Serviço", widget=forms.DateInput(attrs={"type": "date"})
+    )
+
+    # Detailed Report
+    report_title = forms.CharField(label="Título")
+    report = forms.CharField(label="Relato", widget=forms.Textarea())

@@ -42,6 +42,7 @@ class WorkOrder(models.Model):
         ("medium", "Média"),
         ("high", "Alta"),
     ]
+
     # Work Order Details
     ORDER_TYPE = [
         ("type1", "Tipo 1"),
@@ -64,11 +65,12 @@ class WorkOrder(models.Model):
     priority = models.CharField(max_length=20, choices=PRIORITY)
     opening_date = models.DateField()
     status = models.CharField(max_length=20, choices=STATUS)
-    # location = models.CharField(max_length=255)
-    # duration = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
+    service_start_date = models.DateField(blank=True, null=True)
+    service_end_date = models.DateField(blank=True, null=True)
 
     # Report
-    title = models.CharField(max_length=255)
+    report_title = models.CharField(max_length=255)
     report = models.CharField(max_length=500)
 
     def __str__(self):

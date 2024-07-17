@@ -1,0 +1,15 @@
+{% extends "theme/base.html" %}
+{% block title %}
+  Cadastrar OS
+{% endblock title %}
+{% block header %}
+  Cadastro de Ordem de Serviço
+{% endblock header %}
+{% block content %}
+  <form>
+    {% csrf_token %}
+    {% include "core/partials/register_work_order/sections/personal-data.html" %}
+    {% include "core/partials/register_work_order/sections/request-details.html" %}
+    {% include "core/partials/register_work_order/sections/detailed-report.html" %}
+  </form>
+{% endblock content %}
