@@ -1,5 +1,5 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
-def history(request):
-    return render(request, "core/pages/history.html")
+class History(TemplateView):
+    template_name = "core/pages/history.html"
