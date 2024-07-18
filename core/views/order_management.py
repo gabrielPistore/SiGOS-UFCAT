@@ -1,5 +1,5 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
-def order_management(request):
-    return render(request, "core/pages/order-management.html")
+class OrderManagement(TemplateView):
+    template_name = "core/pages/order-management.html"
