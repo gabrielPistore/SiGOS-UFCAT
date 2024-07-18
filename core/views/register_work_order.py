@@ -1,14 +1,6 @@
 from django.shortcuts import render
 
-from .forms import WorkOrderForm
-
-
-def home(request):
-    return render(request, "core/pages/home.html")
-
-
-def order_management(request):
-    return render(request, "core/pages/order-management.html")
+from core.forms import WorkOrderForm
 
 
 def register_work_order(request):
@@ -54,7 +46,3 @@ def register_work_order(request):
         "core/pages/register-work-order.html",
         {"form": form, "sections": sections},
     )
-
-
-def history(request):
-    return render(request, "core/pages/history.html")
