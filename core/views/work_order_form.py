@@ -4,7 +4,7 @@ from core.forms import WorkOrderForm
 
 
 class WorkOrderFormView(TemplateView):
-    template_name = "work_order_form/index.html"
+    template_name = "core/work_order_form/index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
