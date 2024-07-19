@@ -1,37 +1,5 @@
 <form action="">
-    {% for section in sections %}
-        <section x-data="{selected:0}" class="mb-4">
-            <div>
-                <div @click="selected !== 0 ? selected = 0 : selected = null"
-                     class="flex items-baseline gap-4 mb-4 text-xl font-medium">
-                    {{ section.title }}
-                    <i :class="selected === 0 ? 'fa-solid fa-angle-up text-primary' : 'fa-solid fa-angle-down text-primary'"></i>
-                </div>
-                <div x-show="selected == 0"
-                     x-transition:enter="transition ease-out duration-150"
-                     x-transition:enter-start="opacity-0 transform"
-                     x-transition:enter-end="opacity-100 transform"
-                     x-transition:leave="transition ease-in duration-250"
-                     x-transition:leave-start="opacity-100 transform"
-                     x-transition:leave-end="opacity-0 transform"
-                     class="text-sm font-medium">
-                    {% for subsection in section.sections %}
-                        <div class="mb-8 text-sm font-medium">
-                            <h2 class="mb-4 text-base">{{ subsection.title }}</h2>
-                            <div class="grid grid-cols-1 gap-4 {% if section.title != "Detalhamento do Relato" %}md:grid-cols-3{% endif %}"">
-                                {% for field in form %}
-                                    {% if field.name in subsection.fields %}
-                                        <div class="flex flex-col gap-2">
-                                            {{ field.label_tag }}
-                                            {{ field }}
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-    {% endfor %}
+    {% csrf_token %}
+    {% include "core/work_order_form/partials/form-sections.html" %}
+    {% include "core/work_order_form/partials/form-buttons.html" %}
 </form>
