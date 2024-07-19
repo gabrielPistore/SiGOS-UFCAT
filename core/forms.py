@@ -24,7 +24,7 @@ class WorkOrderForm(forms.ModelForm):
         select_fields = [
             "order_type",
             "category",
-            "resposible_employee",
+            "responsible_employee",
             "impact",
             "urgency",
             "priority",
@@ -69,9 +69,9 @@ class WorkOrderForm(forms.ModelForm):
         label="Funcionário Responsável", widget=forms.Select()
     )
 
-    impact = forms.ChoiceField(label="Impacto")
-    urgency = forms.ChoiceField(label="Urgência")
-    priority = forms.ChoiceField(label="Prioridade")
+    impact = forms.ChoiceField(label="Impacto", choices=WorkOrder.LEVEL)
+    urgency = forms.ChoiceField(label="Urgência", choices=WorkOrder.LEVEL)
+    priority = forms.ChoiceField(label="Prioridade", choices=WorkOrder.LEVEL)
 
     opening_date = forms.DateField(
         label="Data de Abertura", widget=forms.DateInput(attrs={"type": "date"})
