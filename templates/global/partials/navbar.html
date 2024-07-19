@@ -15,13 +15,13 @@
         <a href="{% url 'core:order_management' %}" class="{% if request.path == "/order-management/" %}text-secondary{% endif %}">Gerenciar OS</a>
       </li>
       <li>
-        <a href="{% url 'core:register_work_order' %}" class="{% if request.path == "/form/" %}text-secondary{% endif %}">Cadastrar OS</a>
+        <a href="{% url 'core:work_order_form' %}" class="{% if request.path == "/work-order-form/" %}text-secondary{% endif %}">Cadastrar OS</a>
       </li>
       <li>
         <a href="{% url 'core:history' %}" class="{% if request.path == "/history/" %}text-secondary{% endif %}">Histórico</a>
       </li>
     </ul>
     <div class="h-4 border-l-2 border-solid"></div>
-    {% include "theme/partials/navbar-dropdown-menu.html" %}
+    {% include "global/partials/navbar-dropdown-menu.html" %}
   </div>
 </nav>
